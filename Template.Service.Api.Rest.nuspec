@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Template.Service.Api.Rest</id>
+        <version>1.0.0</version>
+        <title>Clean Architecture API Template</title>
+        <authors>Stiven Bohorquez</authors>
+        
+        <description>
+            This API template provides a solid foundation for developing applications using a hexagonal architecture. 
+            It includes JWT authentication to ensure secure communication, exception handling for efficient error management, 
+            and configurable CORS policies for cross-domain request handling. Additionally, it integrates database connections 
+            to facilitate data access and persistence. This template is designed to enable developers to focus on business 
+            logic from the outset, providing a clear and maintainable structure for building robust and scalable APIs.
+        </description>
+        
+        <summary>
+            A starter template for building APIs with a hexagonal architecture, featuring JWT authentication, exception handling, 
+            configurable CORS policies, and database connectivity. Ideal for developers looking to quickly implement 
+            business logic in a structured and maintainable environment.
+        </summary>
+
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <license type="expression">MIT</license> <!-- Agrega la licencia que estés utilizando -->
+        <tags>clean-architecture, project-template, csharp, dotnet</tags> <!-- Separar etiquetas con comas -->
+        <icon>api.png</icon>
+        <iconUrl>https://github.com/Jd4rc3/clean-template/blob/5fd025fecd6775ee7384ada1f9129570fd949d3a/.template.config/icon.png?raw=true</iconUrl>
+        
+        <projectUrl>https://github.com/Sergio-bb/Template.Service.Api.Rest</projectUrl>
+        
+        <repository type="git" url="https://github.com/Sergio-bb/Template.Service.Api.Rest" />
+        
+        <packageTypes>
+            <packageType name="Template" />
+        </packageTypes>
+    </metadata>
+
+    <files>
+        <file src=".template.config/api.png" />
+        <file src="./**" target="content"
+              exclude="**/node_modules/**;**/wiki/**;**/*.nuspec;**/*.nupkg;**/bin/**;**/obj/**;**/.vs/**;**/.idea/**;**/.vscode/**;**/ClientApp/dist/**;**/wwwroot/dist/**;content/Directory.Build.*;**/.git/**;**/.github/workflows/package.yml;**/.github/workflows/codeql.yml;**/.github/ISSUE_TEMPLATE/**;**/.github/icon.png;**/CODE_OF_CONDUCT.md;**/LICENSE;**/README.md;" />
+    </files>
+</package>

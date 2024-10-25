@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Template.Service.Api.Rest.Application.Host.Extensions;
+using Template.Service.Api.Rest.Application.Host.Midellwares;
 using Template.Service.Api.Rest.DrivenAdapter.SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddSwaggerGen();
 
 //Metodo de extension para agregar los servicios de la aplicacion
 builder.Services.AddApplicationServices();
+builder.Services.AddAuthentication(builder.Configuration);
 
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -48,6 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<GlobalExceptionHandler>();
 
 app.UseHttpsRedirection();
 
