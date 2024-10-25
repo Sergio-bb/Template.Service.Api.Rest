@@ -1,0 +1,37 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup .NET SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'  
+
+      # Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Build the project
+      - name: Build
+        run: dotnet build --configuration Release
+
+      # Pack the NuGet package from the .nuspec file
+      - name: Create NuGet Package
+        run: nuget pack Template.Service.Api.Rest.nuspec
+
+      # Push the package to NuGet.org
+      - name: Push NuGet Package
+        run: nuget push YourPackage.*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }}
