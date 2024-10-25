@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Sergio Bohorquez",
+  "classifications": ["Web"],
+  "identity": "Template.Service.Api.Rest",
+  "name": "Arquitectura Limpia",
+  "defaultName": "Template Api Rest",
+  "description": "Extructura inicial de api Rest con arquitectura hexagonal.",
+  "shortName": "webapisln",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "Template.Service.Api.Rest",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "**/*.log",
+        ".git/",
+        ".vs/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<Project>
+    <PropertyGroup>
+        <CompanyName>None</CompanyName>
+        <ProjectName>Template.Service.Api.Rest</ProjectName>
+
+        <Company>$(CompanyName)</Company>
+        <RootNamespace>$(CompanyName).$(ProjectName).$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+
+    </PropertyGroup>
+    <PropertyGroup Label="SDK Versions">
+        <NetCoreTargetVersion>net8.0</NetCoreTargetVersion>
+    </PropertyGroup>
+</Project>
