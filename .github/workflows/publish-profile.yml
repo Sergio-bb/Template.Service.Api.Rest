@@ -34,4 +34,4 @@ jobs:
 
       # Push the package to NuGet.org
       - name: Push NuGet Package
-        run: nuget push YourPackage.*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }}
+        run: nuget push Template.Service.Api.Rest.1.0.0.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_API_KEY }}
